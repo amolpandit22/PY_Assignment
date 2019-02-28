@@ -7,12 +7,12 @@ testStrings = ['isValidNumber','isFMNOCurrent','newRecordID']
 
 def convertUsingRegularExpression(text):
     subString = re.sub('(.)([A-Z][a-z]+)', r'\1 \2', text)   
-    return re.sub('([a-z0-9])([A-Z])', r'\1 \2', subString).lower()
+    return re.sub('([a-z0-9])([A-Z])', r'\1 \2', subString)
 
 def convertUsingInflection(text):
     subString = inflection.underscore(text)
     subString = subString.replace("_", " ")
-    return subString.lower()
+    return subString
 
 
 for test_string in testStrings:
